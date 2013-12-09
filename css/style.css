@@ -1,0 +1,11 @@
+
+html {
+	background-color:black;
+	margin:0px;
+	padding:0px;
+}
+
+#canvas {
+	height:512px;
+	width:100%;
+}

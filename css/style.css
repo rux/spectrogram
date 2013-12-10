@@ -5,6 +5,7 @@ html, body {
 	padding:0px;
 }
 
-#c anvas {
-	width:100%;
+#canvas {
+	display: block;
+	background-color: black;
 }

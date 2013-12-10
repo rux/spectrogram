@@ -1,7 +1,7 @@
 spectrogram
 ===========
 
-A simple scrolling spectrogram for spotify.  Runs as an app.
+A simple scrolling spectrogram app for spotify.
 
 Currently under dev, and I'm on a Mac, so to test it, clone into a ~/Spotify/spectrogram/ directory.
 
@@ -10,6 +10,4 @@ then you may have to set up a dev account.  Not really sure, never done one of t
 
 
 TODO
- * Resize when the app window resizes (currently apple-R for a reload will fix any oddness with widths)
- * Grows in height to fill the window (currently fixed at 512px)
  * Maybe some kind of colour choosing system (I love the current one, but I know it's not everyone's style)

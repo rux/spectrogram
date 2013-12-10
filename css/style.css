@@ -1,11 +1,10 @@
 
-html {
+html, body {
 	background-color:black;
 	margin:0px;
 	padding:0px;
 }
 
-#canvas {
-	height:512px;
+#c anvas {
 	width:100%;
 }

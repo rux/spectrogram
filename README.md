@@ -8,7 +8,7 @@ installation
 ------------
 
  * On a Mac clone/copy the spectrogram directory into a ~/Spotify/spectrogram/ directory
- * On Windows clone/copy the spectrogram directory into a "My Documents\Spotify\spectrogram\" directory
+ * On Windows clone/copy the spectrogram directory into a "My Documents\Spotify\spectrogram\" directory (Windows currently untested)
 
 You should then be able to type "spotify:app:spectrogram" into the search bar.  If that doesn't work
 then you may have to set up a dev account.

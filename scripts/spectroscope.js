@@ -24,12 +24,16 @@ require([
 		canvas.height = 0; // this is to stop an old canvas size from interfering if we have a window resize.
 		scopeHeight = document.height; // to fill the screen from top to bottom
 		scopeWidth = document.width;
-		sampleWidth = 4; // larger means faster movement, sadly not higher sampling rate :-( )
+		sampleWidth = 6; // larger means faster movement, sadly not higher sampling rate :-(
 
         canvas.width=scopeWidth;
         canvas.height=scopeHeight;
 
-		analyser = audio.RealtimeAnalyzer.forPlayer(models.player)// , audio.BAND31);  // default bands is 512.  audio.BAND31 is a suggested
+		analyser = audio.RealtimeAnalyzer.forPlayer(models.player);
+										// default bands is 512.  Swap the above line for the one below for low res
+		// analyser = audio.RealtimeAnalyzer.forPlayer(models.player, audio.BAND31);
+										// however you should change the sampleWidth to 1 or 2 if you choose
+										// to swap to the BAND31 version.
 		analyser.addEventListener("audio", doDraw);
 
 
@@ -73,7 +77,7 @@ require([
         }
 
         ctx.save();
-        ctx.translate(Math.round(-sampleWidth*blockHeight),0);
+        ctx.translate(Math.ceil(-sampleWidth*blockHeight),0);
         ctx.drawImage(canvas, 0, 0);
         ctx.restore();
 	};

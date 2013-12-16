@@ -43,7 +43,7 @@ require([
 		// were probably noise anyway)
 		// Spotify blog says +0 is the loudest, but the API docs say +12.  API seems to be more right.
 
-		gradientIndex=0
+		gradientIndex=0;
 		gradients = [];
 		gradients.push ( chroma.scale(["navy", "purple", "red", "orange", "lightyellow", "white"]).domain([-90,12]) );
 		gradients.push ( chroma.scale(["black", "white"]).domain([-90,12], "log") );
@@ -60,7 +60,7 @@ require([
 	var rotateColours = function() {
 		gradient = gradients[gradientIndex % (gradients.length)];
 		gradientIndex++;
-	}
+	};
 
 
 
@@ -101,5 +101,4 @@ require([
 	};
 
 	exports.init = init;
-	exports.doDraw = doDraw;
 });

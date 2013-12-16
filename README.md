@@ -16,7 +16,7 @@ You should then be able to type "spotify:app:spectrogram" into the search bar.
 use
 ---
 
-The only control currently is clicking anywhere on the window, and it will cycle through different palletes that exist in the code.  It is super easy to add new ones, should you have a favourite colour scheme.  Just edit the spectroscope.js file.  Around line 50 you will see some lines that read "gradient.push ( ... )".  Just copy one of those lines and change the list of colours and a new scheme will be available next time you start the spectrogram.
+The only control currently is clicking anywhere on the window, and it will cycle through different palletes that exist in the code.  It is super easy to add new ones, should you have a favourite colour scheme.  Just edit the spectroscope.js file.  Around line 50 you will see some lines that read "gradient.push ( ... )".  Copy one of those lines and change the list of colours and a new scheme will be available next time you start the spectrogram.
 
 
 TODO

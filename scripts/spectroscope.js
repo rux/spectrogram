@@ -17,7 +17,13 @@ require([
 		sampleWidth,
 
 		scopeHeight,
-		scopeWidth;
+		scopeWidth,
+
+		spectrum,
+
+		refreshRate
+		;
+
 
 
 	var init = function() {
@@ -25,17 +31,30 @@ require([
 		canvas.height = 0; // this is to stop an old canvas size from interfering if we have a window resize.
 		scopeHeight = document.height; // to fill the screen from top to bottom
 		scopeWidth = document.width;
-		sampleWidth = 6; // larger means faster movement, sadly not higher sampling rate :-(
+		sampleWidth = 2; // larger means faster movement, sadly not higher sampling rate :-(
 
 		canvas.width=scopeWidth;
 		canvas.height=scopeHeight;
+
+
+		ctx = document.getElementById("canvas").getContext("2d");
+
 
 		analyser = audio.RealtimeAnalyzer.forPlayer(models.player);
 										// default bands is 512.  Swap the above line for the one below for low res
 		// analyser = audio.RealtimeAnalyzer.forPlayer(models.player, audio.BAND31);
 										// however you should change the sampleWidth to 1 or 2 if you choose
 										// to swap to the BAND31 version.
-		analyser.addEventListener("audio", doDraw);
+		//analyser.addEventListener("audio", doDraw);
+		analyser.addEventListener("audio", setSpectrumData);
+
+		//analyser.addEventListener("audio", doDebug);
+
+
+		//  set off the timer
+		refreshRate = 60; // this is the number of times per second the draw will get called
+
+		setInterval(doDraw, (1000/refreshRate));
 
 
 		// chroma.js makes colours to a scale.  The actual lowest value for a frequency is -94, but setting it to -90
@@ -63,16 +82,25 @@ require([
 	};
 
 
+	var doDebug = function(data) {
+		var debugdiv
+		//console.log(data)
+	}
 
-	var doDraw = function(data) {
 
-		var spectrum = data.audio.spectrum;
+	var setSpectrumData = function(data) {
+		spectrum = data.audio.spectrum
+	}
 
-		ctx = document.getElementById("canvas").getContext("2d");
+	var doDraw = function() {
+
+		//var spectrum = data.audio.spectrum;
+
 
 		var channelHeight = scopeHeight/2;
 		var spectrumLength = spectrum.left.length;
 		var blockHeight = channelHeight/spectrumLength;
+
 
 		// iterate over the elements from the array
 		for (var i = 0; i < spectrumLength; (i++)) {

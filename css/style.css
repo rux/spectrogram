@@ -9,3 +9,13 @@ html, body {
 	display: block;
 	background-color: black;
 }
+
+#debug {
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	background:#000;
+	color:white;
+	z-index:1000;
+}

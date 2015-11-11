@@ -4,6 +4,16 @@ spectrogram
 A simple scrolling spectrogram app for spotify.
 
 
+---
+
+#NOTA BENE
+
+Spotify have deprecated the API, so this now does not work any more.  Project left here for
+historical reasons, and in case I get round to writing another js spectrogram in the future.
+
+---
+
+
 installation
 ------------
 
